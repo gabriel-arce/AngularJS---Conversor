@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es" ng-app="conversorApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Conversor de medidas</title>
+
+  <!-- JQUERY -->
+  <script type="node_modules/jquery/dist/jquery.min.js"></script>
+
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/js/bootstrap.min.js">
+
+  <!-- ANGULAR -->
+  <script src="node_modules/angular/angular.min.js"></script>
+
+</head>
+
+<body ng-controller="conversorCtrl as conversor">  
+  <h1>Conversor <small>AngularJS</small></h1>
+  <form class="well well-lg">
+    <div class="form-group">
+      <label for="millas">Millas</label>
+      <input type="number" name="millas" ng-model="conversor.millas"
+             placeholder="Ingrese la cantidad de millas a convertir" class="form-control" 
+             autofocus="autofocus">
+      <button type="submit" ng-click="conversor.convertir()" class="btn btn-primary form-control">Convertir</button>
+    </div>
+    <div class="form-group alert alert-warning">
+      <label for="kilometros">Kilometros</label>
+      <span class="lead">{{conversor.kilometros}}</span>
+    </div>
+  </form>
+
+  <!-- nuestro jscript -->
+  <script src="conversor.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
